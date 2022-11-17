@@ -1,0 +1,13 @@
+.HomePage {
+}
+
+.HomePage h1 {
+  font-size: calc(1rem + 2vw);
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.HomePage i:hover {
+  color: #ffa500;
+  cursor: pointer;
+}

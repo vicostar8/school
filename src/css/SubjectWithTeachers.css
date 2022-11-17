@@ -1,0 +1,16 @@
+.SubjectDiv {
+  position: relative;
+  background: #1a2d4b;
+}
+
+.SubjectDiv i {
+  margin-right: 1rem;
+  position: absolute;
+  right: 0;
+  color: white;
+}
+
+.SubjectDiv i:hover {
+  cursor: pointer;
+  color: #8599b4;
+}

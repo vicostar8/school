@@ -1,0 +1,15 @@
+.TeacherComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8599b4;
+}
+
+.TeacherComponent i:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.TeacherComponent i {
+  color: #1a2d4b;
+}
