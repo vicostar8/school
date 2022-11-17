@@ -24,10 +24,10 @@ const Teachers = ({
   useEffect(async () => {
     try {
       const fetchSubjects = await axios.get(
-        "http://localhost:4000/api/subjects"
+        "https://vicostar-school-backend.herokuapp.com/api/subjects"
       );
       const fetchTeachers = await axios.get(
-        "http://localhost:4000/api/teachers"
+        "https://vicostar-school-backend.herokuapp.com/api/teachers"
       );
 
       Promise.all([fetchSubjects, fetchTeachers]).then((values) => {

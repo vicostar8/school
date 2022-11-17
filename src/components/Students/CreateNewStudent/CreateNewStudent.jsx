@@ -21,7 +21,7 @@ const CreateNewStudent = ({ createNewStudent }) => {
     ) {
       async function getTeacher() {
         const { data } = await axios.get(
-          `http://localhost:4000/api/teachers/${student.memberOfClass.classNumber}/${student.memberOfClass.classLetter}`
+          `https://vicostar-school-backend.herokuapp.com/api/teachers/${student.memberOfClass.classNumber}/${student.memberOfClass.classLetter}`
         );
         if (data !== "") {
           setStudent({

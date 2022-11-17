@@ -10,7 +10,9 @@ const ContactForm = ({ editContactInfo }) => {
   const [info, setInfo] = useState(contactFormBlueprint);
 
   useEffect(async () => {
-    const { data } = await axios.get("http://localhost:4000/api/contact");
+    const { data } = await axios.get(
+      "https://vicostar-school-backend.herokuapp.com/api/contact"
+    );
     setInfo(data);
   }, []);
 

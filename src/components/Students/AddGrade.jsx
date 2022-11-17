@@ -19,10 +19,10 @@ const AddGrade = ({ addGrade }) => {
   useEffect(() => {
     async function getSubjects() {
       const fetchedSubjects = await axios.get(
-        "http://localhost:4000/api/subjects"
+        "https://vicostar-school-backend.herokuapp.com/api/subjects"
       );
       const fetchedStudent = await axios.get(
-        `http://localhost:4000/api/students/${studentID}`
+        `https://vicostar-school-backend.herokuapp.com/api/students/${studentID}`
       );
 
       setSubjects(fetchedSubjects.data);

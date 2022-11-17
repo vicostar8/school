@@ -34,7 +34,7 @@ const EditTeacher = ({ subjects, editTeacherSubmit }) => {
   useEffect(() => {
     async function getTeacher() {
       const { data } = await axios.get(
-        `http://localhost:4000/api/teachers/${teacherID}`
+        `https://vicostar-school-backend.herokuapp.com/api/teachers/${teacherID}`
       );
       setTeacher(data);
     }
@@ -104,7 +104,7 @@ const EditTeacher = ({ subjects, editTeacherSubmit }) => {
         const cN = teacher.isClassMaster.ofClass.number;
         const cL = teacher.isClassMaster.ofClass.char;
         const { data } = await axios.get(
-          `http://localhost:4000/api/teachers/${cN}/${cL}`
+          `https://vicostar-school-backend.herokuapp.com/api/teachers/${cN}/${cL}`
         );
 
         if (data !== "") {

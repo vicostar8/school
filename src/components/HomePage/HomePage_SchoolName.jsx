@@ -11,7 +11,9 @@ const HomePage_SchoolName = ({ newSchoolName }) => {
 
   useEffect(async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/api/schoolInfo");
+      const { data } = await axios.get(
+        "https://vicostar-school-backend.herokuapp.com/api/schoolInfo"
+      );
       setSchoolName(data.name);
       setInitialSN(data.name);
     } catch (e) {

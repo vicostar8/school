@@ -12,7 +12,7 @@ const StudentProfile = () => {
   useEffect(() => {
     async function getStudent() {
       const { data } = await axios.get(
-        `http://localhost:4000/api/students/${studentID}`
+        `https://vicostar-school-backend.herokuapp.com/api/students/${studentID}`
       );
       setStudent(data);
     }

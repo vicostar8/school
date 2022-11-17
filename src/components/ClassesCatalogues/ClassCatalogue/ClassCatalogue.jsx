@@ -35,10 +35,10 @@ const ClassCatalogue = ({}) => {
   useEffect(async () => {
     try {
       const getClassMaster = await axios.get(
-        `http://localhost:4000/api/teachers/${cN}/${cL}`
+        `https://vicostar-school-backend.herokuapp.com/api/teachers/${cN}/${cL}`
       );
       const getStudents = await axios.get(
-        `http://localhost:4000/api/students/${cN}/${cL}`
+        `https://vicostar-school-backend.herokuapp.com/api/students/${cN}/${cL}`
       );
       Promise.all([getClassMaster, getStudents]).then((values) => {
         setClassMaster(values[0].data);

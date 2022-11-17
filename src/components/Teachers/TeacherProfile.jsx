@@ -18,7 +18,7 @@ const TeacherProfile = () => {
   useEffect(() => {
     async function getTeacher() {
       const { data } = await axios.get(
-        `http://localhost:4000/api/teachers/${teacherProfile}`
+        `https://vicostar-school-backend.herokuapp.com/api/teachers/${teacherProfile}`
       );
       setTeacher(data);
     }

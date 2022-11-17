@@ -58,9 +58,12 @@ class App extends Component {
     try {
       this.setState({ subjects: [...this.state.subjects, subject] });
 
-      const result = await axios.post("http://localhost:4000/api/subjects", {
-        name: subject,
-      });
+      const result = await axios.post(
+        "https://vicostar-school-backend.herokuapp.com/api/subjects",
+        {
+          name: subject,
+        }
+      );
 
       if (result.data.error) throw new Error(`${result.data.error}`);
       else alert(`Subject ${subject} added to the database`);
@@ -88,7 +91,7 @@ class App extends Component {
       this.setState({ teachers: [...this.state.teachers, newTeacher] });
 
       const { data } = await axios.post(
-        "http://localhost:4000/api/teachers",
+        "https://vicostar-school-backend.herokuapp.com/api/teachers",
         newTeacher
       );
 
@@ -110,7 +113,7 @@ class App extends Component {
       this.setState({ teachers: newTeachers });
 
       const { data } = await axios.delete(
-        `http://localhost:4000/api/teachers/${teacherToDelete}`
+        `https://vicostar-school-backend.herokuapp.com/api/teachers/${teacherToDelete}`
       );
       alert(`Teacher deleted from DB! - ${data.firstName} ${data.lastName}`);
     } catch (e) {
@@ -130,7 +133,7 @@ class App extends Component {
 
       // EDIT IN DB
       const { data } = await axios.put(
-        `http://localhost:4000/api/teachers/${editedTeacher.id}`,
+        `https://vicostar-school-backend.herokuapp.com/api/teachers/${editedTeacher.id}`,
         editedTeacher
       );
     } catch (e) {
@@ -146,7 +149,7 @@ class App extends Component {
       this.setState({ students: [...this.state.students, newStudent] });
 
       const { data } = await axios.post(
-        "http://localhost:4000/api/students",
+        "https://vicostar-school-backend.herokuapp.com/api/students",
         newStudent
       );
 
@@ -172,7 +175,7 @@ class App extends Component {
       this.setState({ students: newStudents });
 
       const { data } = await axios.delete(
-        `http://localhost:4000/api/students/${studentToDelete}`
+        `https://vicostar-school-backend.herokuapp.com/api/students/${studentToDelete}`
       );
       alert(`Student deleted from DB! - ${data.firstName} ${data.lastName}`);
     } catch (e) {
@@ -193,7 +196,7 @@ class App extends Component {
 
       // EDIT IN DB
       const { data } = await axios.put(
-        `http://localhost:4000/api/students/${editedStudent.id}`,
+        `https://vicostar-school-backend.herokuapp.com/api/students/${editedStudent.id}`,
         editedStudent
       );
       alert(`Student ${data.firstName} ${data.lastName} has been edited!`);
@@ -210,16 +213,22 @@ class App extends Component {
 
   // SCHOOL INFO
   async newSchoolName(schoolName) {
-    const { data } = await axios.put(`http://localhost:4000/api/schoolInfo`, {
-      name: schoolName,
-    });
+    const { data } = await axios.put(
+      `https://vicostar-school-backend.herokuapp.com/api/schoolInfo`,
+      {
+        name: schoolName,
+      }
+    );
     document.title = schoolName;
     alert(`School name has been edited to ${schoolName}!`);
   }
 
   // CONTACT
   async editSchoolInfo(info) {
-    const { data } = await axios.put(`http://localhost:4000/api/contact`, info);
+    const { data } = await axios.put(
+      `https://vicostar-school-backend.herokuapp.com/api/contact`,
+      info
+    );
     alert(`School contact info edited`);
   }
 

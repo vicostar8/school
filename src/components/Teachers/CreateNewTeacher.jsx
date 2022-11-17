@@ -112,7 +112,7 @@ class CreateNewTeacher extends Component {
           const cN = this.state.isClassMaster.ofClass.number;
           const cL = this.state.isClassMaster.ofClass.char;
           const { data } = await axios.get(
-            `http://localhost:4000/api/teachers/${cN}/${cL}`
+            `https://vicostar-school-backend.herokuapp.com/api/teachers/${cN}/${cL}`
           );
           if (data !== "") {
             alert(

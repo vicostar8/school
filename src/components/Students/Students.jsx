@@ -28,7 +28,9 @@ const Students = ({
 
   useEffect(async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/api/students");
+      const { data } = await axios.get(
+        "https://vicostar-school-backend.herokuapp.com/api/students"
+      );
       fetchedStudents(data);
       setIsLoading(false);
     } catch (e) {

@@ -19,7 +19,7 @@ const SearchBar = ({
     if (searchInput !== "") {
       async function getStudents() {
         const { data } = await axios.get(
-          `http://localhost:4000/api/searchStudents/${searchInput}`
+          `https://vicostar-school-backend.herokuapp.com/api/searchStudents/${searchInput}`
         );
         if (data.length !== 0) {
           setStudents(data);
@@ -31,7 +31,9 @@ const SearchBar = ({
 
     if (searchInput === "") {
       async function getStudents() {
-        const { data } = await axios.get(`http://localhost:4000/api/students`);
+        const { data } = await axios.get(
+          `https://vicostar-school-backend.herokuapp.com/api/students`
+        );
         setStudents(data);
       }
       getStudents();
